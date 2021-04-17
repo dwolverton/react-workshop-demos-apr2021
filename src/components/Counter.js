@@ -23,7 +23,7 @@ function Counter() {
       <p className="Counter__count">{count}</p>
       <p>
         <button type="button" onClick={() => setCount(prev => prev - 1)}>Down</button>
-        <button type="button" onClick={handleReset}>Reset</button>
+        {count !== 0 && <button type="button" onClick={handleReset}>Reset</button>}
         <button type="button" onClick={handleUp}>Up</button>
       </p>
     </div>
