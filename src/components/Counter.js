@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Counter.css';
 
 function Counter() {
-  const [ count, setCount ] = useState(5);
+  const [ count, setCount ] = useState(0);
 
   function handleReset() {
     setCount(0); // use setCount to modify the state at runtime
@@ -11,10 +11,16 @@ function Counter() {
     setCount(prev => prev + 1);
   }
 
+  // Like in HTML, classes in React are specified as a string, separated by spaces.
+  let classes = "Counter";
+  if (count < 0) {
+    classes += " negative";
+  }
+
   return (
-    <div className="Counter">
+    <div className={classes}>
       <h3>Counter</h3>
-      <p>{count}</p>
+      <p className="Counter__count">{count}</p>
       <p>
         <button type="button" onClick={() => setCount(prev => prev - 1)}>Down</button>
         <button type="button" onClick={handleReset}>Reset</button>
