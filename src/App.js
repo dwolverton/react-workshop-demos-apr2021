@@ -6,6 +6,8 @@ function App() {
     <div className="App">
       <h1>This is React</h1>
       <Counter />
+      <Counter />
+      <Counter />
     </div>
   );
 }
