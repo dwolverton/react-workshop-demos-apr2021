@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from './components/Counter';
+import RealWeather from './components/RealWeather';
 import Switch from './components/Switch';
 import Weather from './components/Weather';
 
@@ -13,6 +14,8 @@ function App() {
   return (
     <div className="App">
       <h1>This is React</h1>
+      <RealWeather />
+      
       {
         weatherData.map(data => (
           <Weather key={data.time} time={data.time} conditions={data.conditions} tempF={data.highF}/>
