@@ -1,10 +1,11 @@
+import { useState } from "react";
 import Keypad from "./Keypad";
 
 function CodeEntry() {
   const [code, setCode] = useState("");
 
   function appendCode(number) {
-    setCode(code + number);
+    setCode(prevCode => prevCode + number);
   }
 
   return (
