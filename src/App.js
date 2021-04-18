@@ -1,26 +1,16 @@
 import './App.css';
 import Counter from './components/Counter';
+import FakeWeather from './components/FakeWeather';
 import RealWeather from './components/RealWeather';
 import Switch from './components/Switch';
 import Weather from './components/Weather';
 
 function App() {
-  const weatherData = [
-    { time: "Today", highF: 60, lowF: 50, conditions: "Mostly Cloudy" },
-    { time: "Tomorrow", highF: 65, lowF: 53, conditions: "Partly Sunny" },
-    { time: "Tuesday", highF: 66, lowF: 51, conditions: "Partly Sunny" }
-  ];
-
   return (
     <div className="App">
       <h1>This is React</h1>
       <RealWeather />
-      
-      {
-        weatherData.map(data => (
-          <Weather key={data.time} time={data.time} conditions={data.conditions} tempF={data.highF}/>
-        ))
-      }
+      <FakeWeather />
 
       {/* <Weather time="Today" conditions="Overcast" tempF={45}/>
       <Weather time="Tomorrow" conditions="Sunny" tempF={58}/>
